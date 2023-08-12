@@ -29,7 +29,7 @@ void Main()
 		siv3dkunTexture.draw(Arg::topRight = Scene::Rect().tr().moveBy(-20, 12));
 
 		const Rect leftArrowRect{ Scene::Width() / 2, Scene::Height() - 8 * 9, Scene::Width() / 2, 8 * 3 };
-		leftArrowPatch.draw(leftArrowRect);
+		leftArrowPatch.draw(leftArrowRect, 1.0, TextureFilter::Nearest);
 
 		ballTexture.drawAt(leftArrowRect.center());
 		ballTexture.drawAt(leftArrowRect.center().movedBy(-20, 0));
@@ -38,7 +38,7 @@ void Main()
 		ballTexture.drawAt(leftArrowRect.center().movedBy(20, 0));
 
 		const Rect messageWindowRect{ 0, Scene::Height() - 8 * 6, Scene::Width(), 8 * 6 };
-		messageWindowPatch.draw(messageWindowRect);
+		messageWindowPatch.draw(messageWindowRect, 1.0, TextureFilter::Nearest);
 
 		constexpr Color TextColor{ U"#405028" };
 		FontAsset(U"text")(U"あ！　やせいの　しぶ３Ｄくんが").draw(messageWindowRect.movedBy(8, 8 * 2 - 3), TextColor);
